@@ -20,7 +20,7 @@
     "type": "git",
     "url": "git+https://github.com/pajtai/wireframe.git"
   },
-  "author": "",
+  "author": "wireframe-ui",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/pajtai/wireframe/issues"
