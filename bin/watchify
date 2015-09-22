@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
-./bin/installDeps
+path="$1"
+dirname="$2"
 
-watchify -o app/public/bundle.js -v -d app/main.js
+"$dirname/bin/installDeps"
+
+watchify -o "$path/public/bundle.js" -v -d "$path/main.js"

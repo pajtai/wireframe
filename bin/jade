@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 
-if ! command -v jade >/dev/null 2>&1
-    then
-        npm install -g jade
-    fi
+path="$1"
+dirname="$2"
 
-jade app/index.jade -o app/public --watch
+"$dirname/bin/installDeps"
+
+if [ -e "$path/index.jade" ]
+then
+    echo "jade index detected in root, writing to root/public/index.html and watching for changes"
+    jade "$path/index.jade" -o "$path/public" --watch
+fi

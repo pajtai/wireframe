@@ -1,24 +1,64 @@
 # wireframe-ui
 
-# Currently pre alphap - demo app is at: https://github.com/pajtai/wireframe-demo
+A way to quickly create interactive and responsive wireframes using HTML, CSS, and JavaScript. 
 
-Simple express app to server wireframes.
-Wireframe views are pulled in as npms.
+Demo app is at: https://github.com/pajtai/wireframe-demo
 
+To use:
+
+```
+npm install --save wireframe-ui
+```
+
+Now create an index.jade (the `wireframe-ui` directory will be automatically available to you):
+
+```jade
+doctype html
+head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Wireframe Demo
+    link(href='/wireframe-ui/pure/pure-min.css', rel='stylesheet')
+    link(href='/wireframe-ui/pure/grids-responsive-min.css', rel='stylesheet')
+    link(href='/wireframe-ui/style.css', rel='stylesheet')
+body
+    app(project='{ opts }')
+        // opts is your app state and you can create you html here
+```
+
+Then create a `main.js` that will act as the injection point of data into the front end template:
+ 
 ```javascript
-var wireframe = require('wireframe-ui');
+ 'use strict';
+ 
+ var wireframe = require('wireframe-ui/client');
+ 
+ init();
+ 
+ function init() {
+     var appState = {
+         title : 'Project Title',
+         ...
+     };
+ 
+     wireframe.start(appState);
+ }
+ ```
+ 
+ Finally start up the server with `index.js`:
+ 
+```javascript
+var wf = require('wireframe-ui');
 
-wireframe
+wf
     .start({
         baseDirectory : __dirname
     });
-
 ```
+    
+At this point you can start things of with `node app`. `main.js` and `index.jade` are watched for changes while the server is running.    
 
-There are 3 files that are watched and built in `baseDirectory`:
-
-# `index.jade` built to `public/index.html`
-# `main.scss` built to `public/style.css` and `public/style.map`
-# `main.js` buil to `public/bundle.js`
+Tags available are currently in the `views` directory of this project, but will be pulled out into separate npms in the future.
 
 After starting wireframe go to http://localhost:3000/ - port can be customized as the `option.port` passed to `wireframe.start`.

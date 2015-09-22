@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
-./bin/installDeps
+path="$1"
+dirname="$2"
 
-node-sass app/style.scss --source-map app/public/style.map app/public/style.css
+"$dirname/bin/installDeps"
 
-postcss --use autoprefixer -o app/public/style.css app/public/style.css
-
-(watch  ./bin/sassAutoprefixerWatch app/views)
+echo "creating wirefram-ui css file"
+node-sass "$dirname/sass/main.scss" --source-map "$dirname/static//wireframe-ui/style.map" "$dirname/static/wireframe-ui/style.css"
+postcss --use autoprefixer -o "$dirname/static/wireframe-ui/style.css" "$dirname/static/wireframe-ui/style.css"
