@@ -1,8 +1,7 @@
 'use strict';
 
 var riot = require('riot'),
-    appView = require('./app.tag'),
-    bulk = require('bulkify');
+    appView = require('./app.tag');
 
 // ---- //
 
