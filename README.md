@@ -75,5 +75,5 @@ After starting wireframe go to http://localhost:3000/ - port can be customized a
 
 ## FAQ:
 
-Q: When I refresh the page, I'm seeing a "Cannot read property 'prototype' of undefined" error in the console that looks like it's in express.
-A: You must have required, `wireframe-ui` and not `wireframe-ui/client` somewhere in `client.js` or a `.tag` file.
+* Q: When I refresh the page, I'm seeing a "Cannot read property 'prototype' of undefined" error in the console that looks like it's in express.
+* A: You must have required, `wireframe-ui` and not `wireframe-ui/client` somewhere in `client.js` or a `.tag` file.
