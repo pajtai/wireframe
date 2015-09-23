@@ -2,7 +2,7 @@
 
 A way to quickly create interactive and responsive wireframes using HTML, CSS, and JavaScript. 
 
-Demo app is at: https://github.com/pajtai/wireframe-demo
+Demo app is at: https://github.com/wireframe-ui/wireframe-demo
 
 To use:
 
