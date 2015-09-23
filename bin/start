@@ -6,6 +6,7 @@ echo "path is: $path"
 
 mkdir -p "$path/public"
 
+"$dirname/bin/compileSass" "$path" "$dirname"
 ("$dirname/bin/sass" "$path" "$dirname") &
 ("$dirname/bin/jade" "$path" "$dirname") &
 (NODE_ENV=dev "$dirname/bin/watchify" "$path" "$dirname") &

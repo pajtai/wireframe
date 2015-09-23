@@ -6,5 +6,5 @@ dirname="$2"
 "$dirname/bin/installDeps"
 
 echo "creating wireframe-ui css file"
-node-sass "$dirname/sass/compiled.scss" --source-map "$dirname/static//wireframe-ui/style.map" "$dirname/static/wireframe-ui/style.css"
+node-sass "$dirname/sass/compiled.scss" --source-map "$dirname/static/wireframe-ui/style.map" "$dirname/static/wireframe-ui/style.css"
 postcss --use autoprefixer -o "$dirname/static/wireframe-ui/style.css" "$dirname/static/wireframe-ui/style.css"

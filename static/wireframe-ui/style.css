@@ -2027,9 +2027,9 @@
 .fa-fonticons:before {
   content: ""; }
 
-header {
-  border-radius: 6px; }
-
 list li {
   font-family: "BLOKKNeue-Regular", serif; }
+
+header {
+  border-radius: 6px; }
 /*# sourceMappingURL=style.css.map */

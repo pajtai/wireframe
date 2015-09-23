@@ -2,6 +2,8 @@
 
 var express = require('express'),
     path = require('path'),
+    fs = require('fs'),
+    _ = require('lodash'),
     exec = require('child_process').exec;
 
 module.exports = {
@@ -13,10 +15,19 @@ function start(options) {
         baseDirectory = options.baseDirectory,
         publicDirectory = path.join(baseDirectory, 'public'),
         wireframePublicDirectory = path.join(__dirname, 'static'),
-        port = options.port || 3000;
+        port = options.port || 3000,
+        child,
+        wireFrameUiJSON = require(path.join(baseDirectory, '../wireframe-ui.json')),
+        sassFile = '@import "main";\n';
 
+    _.forEach(wireFrameUiJSON.views, function(view) {
+        sassFile    += '@import "' + path.join(baseDirectory,  '..', 'node_modules', view, 'style.scss') + '";\n';
+    });
 
-    var child = exec(__dirname + '/bin/start ' + baseDirectory + ' ' + __dirname);
+    fs.writeFileSync(path.join(__dirname, 'sass', 'compiled.scss'), sassFile);
+
+    child = exec(__dirname + '/bin/start ' + baseDirectory + ' ' + __dirname);
+
     child.stdout.on('data', function(data) {
         console.log('stdout: ' + data);
     });
