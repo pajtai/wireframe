@@ -1,12 +1,12 @@
 'use strict';
 
 var riot = require('riot'),
-    appView = require('../views/app/template.tag');
+    appView = require('./app.tag'),
+    bulk = require('bulkify');
 
-// need to require all nested tags for them to be in scope
-require('../views/navigation/template.tag');
-require('../views/list/template.tag');
-require('../views/header/template.tag');
+require('../static/wireframe-ui/wireframe-ui-header/template.tag');
+require('../static/wireframe-ui/wireframe-ui-list/template.tag');
+require('../static/wireframe-ui/wireframe-ui-navigation/template.tag');
 
 module.exports = {
     start : start
