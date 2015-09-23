@@ -1,6 +1,6 @@
 {
   "name": "wireframe-ui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -29,6 +29,7 @@
   "dependencies": {
     "express": "^4.13.3",
     "flux": "^2.1.1",
+    "jade": "^1.11.0",
     "lodash": "^3.10.1",
     "riot": "^2.2.4",
     "riotify": "^0.1.2",
