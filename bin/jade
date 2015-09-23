@@ -3,8 +3,6 @@
 path="$1"
 dirname="$2"
 
-"$dirname/bin/installDeps"
-
 if [ -e "$path/index.jade" ]
 then
     echo "jade index detected in root, writing to root/public/index.html and watching for changes"
