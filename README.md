@@ -27,7 +27,7 @@ body
         // opts is your app state and you can create you html here
 ```
 
-Then create a `main.js` that will act as the injection point of data into the front end template:
+Then create a `client.js` that will act as the injection point of data into the front end template:
  
 ```javascript
  'use strict';
@@ -57,7 +57,7 @@ wf
     });
 ```
     
-At this point you can start things of with `node app`. `main.js` and `index.jade` are watched for changes while the server is running.    
+At this point you can start things of with `node app`. `client.js` and `index.jade` are watched for changes while the server is running.    
 
 Tags available are currently in the `views` directory of this project, but will be pulled out into separate npms in the future.
 

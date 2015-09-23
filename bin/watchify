@@ -3,4 +3,4 @@
 path="$1"
 dirname="$2"
 
-watchify -o "$path/public/bundle.js" -v -d "$path/main.js"
+watchify -o "$path/public/bundle.js" -v -d "$path/client.js"
