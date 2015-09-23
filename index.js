@@ -21,7 +21,7 @@ function start(options) {
         sassFile = '@import "main";\n';
 
     _.forEach(wireFrameUiJSON.views, function(view) {
-        sassFile    += '@import "' + path.join(baseDirectory,  '..', 'node_modules', view, 'style.scss') + '";\n';
+        sassFile    += '@import "' + path.join(__dirname,  'static', 'wireframe-ui', view, 'style.scss') + '";\n';
     });
 
     fs.writeFileSync(path.join(__dirname, 'sass', 'compiled.scss'), sassFile);

@@ -1,7 +1,5 @@
 # wireframe-ui
 
-# currently pre alpha
-
 A way to quickly create interactive and responsive wireframes using HTML, CSS, and JavaScript. 
 
 Demo app is at: https://github.com/pajtai/wireframe-demo
@@ -12,7 +10,7 @@ To use:
 npm install --save wireframe-ui
 ```
 
-Now create an index.jade (the `wireframe-ui` directory will be automatically available to you):
+Now create an index.jade (the `wireframe-ui` directory reference in the Jade file will be automatically available to you):
 
 ```jade
 doctype html
