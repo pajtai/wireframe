@@ -31,23 +31,23 @@ function start(options) {
     fs.writeFileSync(path.join(__dirname, 'sass', 'compiled.scss'), sassFile);
     fs.writeFileSync(path.join(__dirname, 'client', 'index.js'), jsTemplate.replace('// ---- //', jsIncludes))
 
-    execSync('bower install', {
+    process.stdout.write(execSync('bower install', {
         cwd : __dirname
-    });
+    }));
 
     _.forEach(wireFrameUiJSON.views, function(view) {
-        execSync('bower install ' + view, {
+        process.stdout.write(execSync('bower install ' + view, {
             cwd : __dirname
-        });
+        }));
     });
 
     child = exec(__dirname + '/bin/start ' + baseDirectory + ' ' + __dirname);
 
     child.stdout.on('data', function(data) {
-        console.log('stdout: ' + data);
+        console.log('> ' + data);
     });
     child.stderr.on('data', function(data) {
-        console.log('stdout: ' + data);
+        console.log('! > ' + data);
     });
     child.on('close', function(code) {
         console.log('closing code: ' + code);
